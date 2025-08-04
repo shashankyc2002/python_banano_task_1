@@ -1,0 +1,16 @@
+<!-- templates/home.html -->
+<h1>Welcome to the Healthcare Portal</h1>
+<p>
+  <a href="{% url 'signup' %}">Sign Up</a> |
+  <a href="{% url 'login' %}">Login</a>
+</p>
+
+{% if user.is_authenticated %}
+  <p>Hello, {{ user.username }} | <form method="post" action="{% url 'logout' %}" style="display:inline;">
+  {% csrf_token %}
+  <button type="submit" style="background:none;border:none;color:blue;cursor:pointer;text-decoration:underline;">
+    Logout
+  </button>
+</form>
+</p>
+{% endif %}

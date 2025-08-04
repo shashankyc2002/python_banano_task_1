@@ -1,0 +1,12 @@
+<h2>Welcome Dr. {{ user.first_name }}</h2>
+{% if user.profile_picture %}
+  <img src="{{ user.profile_picture.url }}" width="150" />
+{% else %}
+  <p>No profile picture uploaded.</p>
+{% endif %}
+
+<ul>
+  <li>Username: {{ user.username }}</li>
+  <li>Email: {{ user.email }}</li>
+  <li>Address: {{ user.address_line1 }}, {{ user.city }}, {{ user.state }}, {{ user.pincode }}</li>
+</ul>
